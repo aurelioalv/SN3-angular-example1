@@ -30,15 +30,15 @@ const HEROES: Hero[] = [
 ];*/
 var HEROES = [
     { id: 1, name: 'Daenerys Targaryen', comment: 'Madre de cabras', image: 'images/daenarys-512x512.jpg' },
-    { id: 2, name: 'Sansa Stark', comment: 'Se hace mayor' },
-    { id: 3, name: 'Tyrion Lannister', comment: 'El mas listo' },
-    { id: 4, name: 'Cercei Lannister', comment: 'Muy mala' },
-    { id: 5, name: 'Jon Nieve', comment: 'BlancaNieves' },
-    { id: 6, name: 'Margaery Tyrell', comment: 'Tambien ta buenorra' },
-    { id: 7, name: 'Jorah Mormont', comment: 'Pobre Hombre' },
-    { id: 8, name: 'Missandei', comment: 'Morena Buenorra' },
-    { id: 9, name: 'Melisandre', comment: 'Mujer de rojo' },
-    { id: 10, name: 'Jaime Lannister ', comment: 'Matarreyes' }
+    { id: 2, name: 'Sansa Stark', comment: 'Se hace mayor', image: 'images/sansa-stark-160.jpg' },
+    { id: 3, name: 'Tyrion Lannister', comment: 'El mas listo', image: 'images/tyrion-lannister-512x512.jpg' },
+    { id: 4, name: 'Cercei Lannister', comment: 'Muy mala', image: 'images/cersei-lannister-512x512.jpg' },
+    { id: 5, name: 'Jon Nieve', comment: 'BlancaNieves', image: 'images/daenarys-512x512.jpg' },
+    { id: 6, name: 'Margaery Tyrell', comment: 'Tambien ta buenorra', image: 'images/daenarys-512x512.jpg' },
+    { id: 7, name: 'Jorah Mormont', comment: 'Pobre Hombre', image: 'images/daenarys-512x512.jpg' },
+    { id: 8, name: 'Missandei', comment: 'Morena Buenorra', image: 'images/daenarys-512x512.jpg' },
+    { id: 9, name: 'Melisandre', comment: 'Mujer de rojo', image: 'images/daenarys-512x512.jpg' },
+    { id: 10, name: 'Jaime Lannister ', comment: 'Matarreyes', image: 'images/daenarys-512x512.jpg' }
 ];
 var AppComponent = (function () {
     function AppComponent() {
