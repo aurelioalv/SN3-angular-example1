@@ -20,23 +20,26 @@ const HEROES: Hero[] = [
   { id: 20, name: 'Quick Silver' }
 ];*/
 const HEROES: Hero[] = [
-  { id: 1, name: 'Daenerys Targaryen', comment: 'Madre de cabras',image: 'images/daenarys-512x512.jpg'},
-  { id: 2, name: 'Sansa Stark', comment: 'Se hace mayor', image: 'images/sansa-stark-160.jpg' },
+  { id: 1, name: 'Daenerys Targaryen', comment: 'Rompedora de cadenas',image: 'images/daenarys-512x512.jpg'},
+  { id: 2, name: 'Sansa Stark', comment: 'De niña a mujer', image: 'images/sansa-stark-160.jpg' },
   { id: 3, name: 'Tyrion Lannister', comment: 'El mas listo',image: 'images/tyrion-lannister-512x512.jpg' },
   { id: 4, name: 'Cercei Lannister', comment: 'Muy mala',image: 'images/cersei-lannister-512x512.jpg' },
-  { id: 5, name: 'Jon Nieve', comment: 'BlancaNieves',image: 'images/daenarys-512x512.jpg' },
-  { id: 6, name: 'Margaery Tyrell', comment: 'Tambien ta buenorra',image: 'images/daenarys-512x512.jpg' },
-  { id: 7, name: 'Jorah Mormont', comment: 'Pobre Hombre',image: 'images/daenarys-512x512.jpg' },
-  { id: 8, name: 'Missandei', comment: 'Morena Buenorra',image: 'images/daenarys-512x512.jpg' },
-  { id: 9, name: 'Melisandre' , comment: 'Mujer de rojo',image: 'images/daenarys-512x512.jpg'},
-  { id: 10, name: 'Jaime Lannister ', comment: 'Matarreyes',image: 'images/daenarys-512x512.jpg' }
+  { id: 5, name: 'Jon Nieve', comment: 'BlancaNieves',image: 'images/john-snow-512x512.jpg' },
+  { id: 6, name: 'Margaery Tyrell', comment: 'Tambien ta buenorra',image: 'images/margarey-tyrell-512x512.jpg' },
+  { id: 7, name: 'Jorah Mormont', comment: 'Pobre Hombre',image: 'images/jorah-mormont-512x512.jpg' },
+  { id: 8, name: 'Missandei', comment: 'Muy sumisa',image: 'images/missandei-512x512.jpg' },
+  { id: 9, name: 'Melisandre' , comment: 'Mujer de rojo',image: ''},
+  { id: 10, name: 'Jaime Lannister ', comment: 'Matarreyes',image: '' }
 ];
 
 @Component({
   selector: 'my-app',
   template: `
-    <h1>{{title}}</h1>
-    <h2>Cast</h2>
+  <table>
+  <tr>
+  <td>
+    <h2>{{title}}</h2>
+    <h3>Cast</h3>
     <ul class="heroes">
       <li *ngFor="let hero of heroes"
         [class.selected]="hero === selectedHero"
@@ -44,8 +47,10 @@ const HEROES: Hero[] = [
         <span class="badge">{{hero.id}}</span> {{hero.name}}
       </li>
     </ul>
+	</td>
+	<td>
     <div *ngIf="selectedHero">
-		<img src="{{selectedHero.image}}" height="82" width="82">
+		<img src="{{selectedHero.image}}" height="150" width="150">
       <h2>{{selectedHero.name}} details!</h2>
       <div><label>id: </label>{{selectedHero.id}}</div>
       <div>
@@ -54,6 +59,9 @@ const HEROES: Hero[] = [
 		<label>{{selectedHero.comment}}</label>
       </div>
     </div>
+	</td>
+	<tr>
+	</table>
   `,
   styles: [`
 	img {height=42 width=42}
@@ -107,7 +115,7 @@ const HEROES: Hero[] = [
   `]
 })
 export class AppComponent {
-  title = 'Game of Thrones';
+  title = 'Game of tronos';
   heroes = HEROES;
   selectedHero: Hero;
 
