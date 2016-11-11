@@ -6,19 +6,7 @@ export class Hero {
   comment: string;
   image: string;
 }
-/*
-const HEROES: Hero[] = [
-  { id: 11, name: 'Ironman' },
-  { id: 12, name: 'Hulk' },
-  { id: 13, name: 'Thor' },
-  { id: 14, name: 'HawkEye' },
-  { id: 15, name: 'Wolverine' },
-  { id: 16, name: 'Antman' },
-  { id: 17, name: 'Black Widow' },
-  { id: 18, name: 'Captain America' },
-  { id: 19, name: 'Scarlet Witch' },
-  { id: 20, name: 'Quick Silver' }
-];*/
+
 const HEROES: Hero[] = [
   { id: 1, name: 'Daenerys Targaryen', comment: 'Rompedora de cadenas',image: 'images/daenarys-512x512.jpg'},
   { id: 2, name: 'Sansa Stark', comment: 'De niña a mujer', image: 'images/sansa-stark-160.jpg' },
@@ -54,14 +42,35 @@ const HEROES: Hero[] = [
       <h2>{{selectedHero.name}} details!</h2>
       <div><label>id: </label>{{selectedHero.id}}</div>
       <div>
-        <label>name: </label>
-        <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+
+		<form name="myForm" ng-controller="Ctrl">
+    <label>name: </label>
+        <input id="name" class="form-control" [(ngModel)]="selectedHero.name" placeholder="name"
+		(ngModelChange)="selectedHero.name = $event" name="name" required #name="ngModel" #spy/>
+			<div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+			Name is required
+			</div>
+		</form>
 		<label>{{selectedHero.comment}}</label>
+		<button type="button" class="btn btn-default" (click)="onButton(selectedHero)">Info famous character</button>
+		<br><p >Escribe para cambiar el nombre<br><br> {{spy.className}}</p>
+
       </div>
     </div>
+
+
 	</td>
 	<tr>
 	</table>
+	<ul class="nav navbar-nav">
+  <li>
+    <a router-link="home">Home</a>
+  </li>
+  <li>
+    <a router-link="add">Add</a>
+  </li>
+</ul>
   `,
   styles: [`
 	img {height=42 width=42}
@@ -112,15 +121,25 @@ const HEROES: Hero[] = [
       margin-right: .8em;
       border-radius: 4px 0 0 4px;
     }
+	.ng-valid[required], .ng-valid.required  {
+	border-left: 5px solid #42A948; /* green */
+	}
+
+	.ng-invalid:not(form)  {
+	border-left: 5px solid #a94442; /* red */
+	}
   `]
 })
 export class AppComponent {
-  title = 'Game of tronos';
+  title = 'Game of Thrones';
   heroes = HEROES;
   selectedHero: Hero;
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
-}
+  	onButton(hero: Hero): void {
+    alert(hero.name +" / "+ hero.comment);
+  }
 
+}
