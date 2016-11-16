@@ -30,6 +30,7 @@
     packages: {
       app: {
         main: './main.js',
+		port: 80,
         defaultExtension: 'js'
       },
       rxjs: {
