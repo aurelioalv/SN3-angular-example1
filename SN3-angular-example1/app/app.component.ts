@@ -43,14 +43,14 @@ const HEROES: Hero[] = [
       <div><label>id: </label>{{selectedHero.id}}</div>
       <div>
 
-		<form name="myForm" ng-controller="Ctrl">
-    <label>name: </label>
-        <input id="name" class="form-control" [(ngModel)]="selectedHero.name" placeholder="name"
-		(ngModelChange)="selectedHero.name = $event" name="name" required #name="ngModel" #spy/>
-			<div [hidden]="name.valid || name.pristine"
-             class="alert alert-danger">
-			Name is required
-			</div>
+    		<form name="myForm" ng-controller="Ctrl">
+        <label>name: </label>
+            <input id="name" class="form-control" [(ngModel)]="selectedHero.name" placeholder="name"
+    		(ngModelChange)="selectedHero.name = $event" name="name" required #name="ngModel" #spy/>
+    			<div [hidden]="name.valid || name.pristine"
+                 class="alert alert-danger">
+    			Name is required
+  			  </div>
 		</form>
 		<label>{{selectedHero.comment}}</label>
 		<button type="button" class="btn btn-default" (click)="onButton(selectedHero)">Info famous character</button>
