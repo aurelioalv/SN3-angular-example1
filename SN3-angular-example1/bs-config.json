@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 {
   "port": 8080,
   "files": ["./app/**/*.{html,htm,css,js}"],
   "server": { "baseDir": "./" }
+=======
+{
+  "port": 8080,
+  "files": ["./app/**/*.{html,htm,css,js}"],
+  "server": { "baseDir": "./" }
+>>>>>>> ca2f00fe07dc87476cb5acd2cceeca63ee8489b2
 }
